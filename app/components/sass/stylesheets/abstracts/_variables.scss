@@ -2,7 +2,11 @@
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
 
-
+%flex-row-center {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center;
+}
 
 
 
