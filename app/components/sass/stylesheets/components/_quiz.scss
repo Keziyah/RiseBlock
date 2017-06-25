@@ -24,6 +24,8 @@
 
         &-single {
             padding: 0.5em; 
+            font-family: $secondary-font; 
+            font-size: 0.8em; 
 
             &:hover {
                 background-color: #f7f7f8;
@@ -64,13 +66,51 @@
         @extend %flex-row-center;
 
         &--correct, &--incorrect {
-            background: #efedec;
-            width: 100%; 
+            @extend %flex-col-center;
+            background: #f7f7f8;
+            width: 100%;
+            padding: 1em; 
+
+            div {
+                font-family: $secondary-font; 
+                @extend %flex-col-center;
+                align-items: center;
+                
+                p {
+                    font-size: 0.6em; 
+                    font-weight: 700; 
+                }
+
+                i {
+                    border: 1px solid #333; 
+                    border-radius: 50%;
+                    padding: 0.6em;  
+                }
+            } 
+
+            p {
+                font-size: 0.9em; 
+            }
         }
 
         &--again {
-            
+            @extend %flex-row-center;
+            padding-top: 1em; 
+            font-family: $secondary-font; 
+
+            span {
+                @extend %flex-row-center;
+                align-items: center; 
+                font-weight: 300; 
+                font-size: 0.5em; 
+                text-transform: uppercase; 
+            }
         }
 
     }
 }
+
+//ANIMATIONS
+//Border animation from: https://codepen.io/giana/pen/yYBpVY
+
+

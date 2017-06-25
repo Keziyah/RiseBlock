@@ -8,15 +8,22 @@
     justify-content: center;
 }
 
+%flex-col-center {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+}
+
 
 
 /// Regular font family
 /// @type List
-$text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+$primary-font: 'Merriweather', serif !default;
+$secondary-font: 'Lato', sans-serif;
 
 /// Code (monospace) font family
 /// @type List
-$code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
+// $code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
 
 
 

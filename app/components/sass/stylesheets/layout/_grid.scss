@@ -2,14 +2,7 @@
 @import 'settings';
 @import 'abstracts/variables';
 
-// generate classes :
-@include gridle_generate_classes ( );
-//This generates classes like:
-    //gridle_grid -->set the number of colums in the grid
-    //gridle_state --> breakpoints, as defined in settings
-    //gridle --> sets the width of an element by column
 
-// manage container width :
 .container {
     max-width : 960px;
     margin : 0 auto;

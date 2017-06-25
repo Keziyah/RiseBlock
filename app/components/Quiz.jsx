@@ -58,8 +58,8 @@ export default class Quiz extends Component {
                             </form>
                         </div>
 
-                        <div className="quiz-content__submit">
-                            <input type="submit" disabled={this.state.selected === "" ? true : false} onClick={this.handleClick} />
+                        <div className="quiz-content__submit" style={{visibility: this.state.submitted ? "hidden" : "visible"}}>
+                            <input type="submit" disabled={this.state.selected === ""} onClick={this.handleClick} />
                         </div>
 
                 { this.state.submitted &&
@@ -68,12 +68,14 @@ export default class Quiz extends Component {
                             {
                                 this.state.correct ?
                                     <div className="quiz-content__results--correct">
-                                        <i className="material-icons">done</i>
+                                        <div><i className="material-icons">done</i>
+                                        <p>Correct</p></div>
                                         <p>{this.props.data.correctAnswer}</p>
                                     </div>
                                     :
                                     <div className="quiz-content__results--incorrect">
-                                        <i className="material-icons">highlight_off</i>
+                                        <div><i className="material-icons">highlight_off</i>
+                                        <p>Incorrect</p></div>
                                         <p>{this.props.data.wrongAnswer}</p>
                                     </div>
                             }
