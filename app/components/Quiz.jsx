@@ -42,19 +42,28 @@ export default class Quiz extends Component {
 
                         <div className="quiz-content__answers">
                             <form>
-                                <div className="quiz-content__answers-single">
-                                    <label>
+                                <label>
+                                    <div className={`${this.state.submitted && this.state.selected === this.props.data.answer1 ? 'quiz-content__answers-single--selected' : ""} quiz-content__answers-single`}>
                                         <input type="radio" name="answer" value={this.props.data.answer1} onClick={this.radio} />
+                                        {
+                                            this.state.selected === this.props.data.answer1 ? 
+                                            <i className="material-icons">radio_button_checked</i> :
+                                            <i className="material-icons">radio_button_unchecked</i>
+                                        }
                                         <p>{this.props.data.answer1}</p>
-                                    </label>
-                                </div>
-
-                                <div className="quiz-content__answers-single">
-                                    <label>
+                                    </div>
+                                </label>
+                                <label>
+                                    <div className={`${this.state.submitted && this.state.selected === this.props.data.answer2 ? 'quiz-content__answers-single--selected' : ""} quiz-content__answers-single`}>
                                         <input type="radio" name="answer" value={this.props.data.answer2} onClick={this.radio} />
+                                        {
+                                            this.state.selected === this.props.data.answer2 ? 
+                                            <i className="material-icons">radio_button_checked</i> :
+                                            <i className="material-icons">radio_button_unchecked</i>
+                                        }
                                         <p>{this.props.data.answer2}</p>
-                                    </label>
-                                </div>
+                                    </div>
+                                </label>
                             </form>
                         </div>
 
@@ -74,14 +83,15 @@ export default class Quiz extends Component {
                                     </div>
                                     :
                                     <div className="quiz-content__results--incorrect">
-                                        <div><i className="material-icons">highlight_off</i>
+                                        <div><i className="material-icons">clear</i>
                                         <p>Incorrect</p></div>
                                         <p>{this.props.data.wrongAnswer}</p>
                                     </div>
                             }
                         </div>
                         <div className="quiz-content__results--again">
-                            <span onClick={this.handleReset}><i className="material-icons">replay</i><p>take again</p></span>
+                            <button onClick={this.handleReset}><span><i className="material-icons">replay</i><p>take again</p></span>
+                            </button>
                         </div>
                     </div>
                 }
