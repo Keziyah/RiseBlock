@@ -1,7 +1,9 @@
 'use strict';
 
-var webpack = require('webpack');
-var autoprefixer = require('autoprefixer');
+const webpack = require('webpack');
+const autoprefixer = require('autoprefixer');
+const precss = require('precss');
+
 
 
 module.exports = {
@@ -21,24 +23,22 @@ module.exports = {
         query: {
           presets: ['react', 'es2015']
         }
-      }, 
+      },
       {
         test: /\.scss$/,
-        loaders: ["style-loader", "css-loader", "sass-loader", 'postcss-loader']
+        loader: 'style-loader!css-loader?sourceMap!postcss-loader!sass-loader?sourceMap'
       }
     ]
-  }, 
+  },
+  plugins: [
+       new webpack.LoaderOptionsPlugin({
+         // test: /\.xxx$/, // may apply this only for some modules
+         options: {
+           postcss: [autoprefixer(), precss()]
+         }
+       })
+     ],
   resolve: {
     extensions: ['.js', '.jsx'],
-  }, 
-  
-  plugins: [
-  new webpack.LoaderOptionsPlugin({
-    options: {
-      postcss: [
-        autoprefixer(),
-      ]
-    }
-  })
-],
+  }
 }; 
