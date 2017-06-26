@@ -13,10 +13,10 @@
 
 .quiz-content {
     padding: 1em; 
-
+    //"What is this a picture of?"
     &__question {
         padding-bottom: 2em; 
-
+        //Main image
         img {
             max-width: 830px; 
             width: 100%; 
