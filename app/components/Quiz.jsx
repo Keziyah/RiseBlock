@@ -72,7 +72,7 @@ export default class Quiz extends Component {
                         </div>
 
                 { this.state.submitted &&
-                    <div>
+                    <div className="quiz-content__bottom">
                         <div className="quiz-content__results">
                             {
                                 this.state.correct ?

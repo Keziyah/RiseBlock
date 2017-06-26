@@ -1,14 +1,12 @@
 @import 'abstracts/variables';
 
-.quiz {
-    @extend %flex-row-center;
-}
-
 .quiz {  
     border: 1px solid #ddd; 
     box-shadow: 1px 1px 1px 2px #ddd; 
     margin-top: 5%; 
     margin-bottom: 2%; 
+    @extend %flex-row-center;
+
 }
 
 .quiz-content {
@@ -43,16 +41,8 @@
                 transform: scaleX(0);  
                 transition: transform 250ms ease-in-out;
             }
-            // border: 1px solid rgba(0, 0, 0, 0); 
-
-            // -webkit-transition: border-color 2s linear; /* Saf3.2+, Chrome */
-            // -moz-transition: border-color 2s linear; /* FF3.7+ */
-            // -o-transition: border-color 2s linear; /* Opera 10.5 */
-            // transition: border-color 2s linear;  
 
             &--selected {
-                // border-color: 
-                // border-left: solid 2px rgba(116, 112, 126, 1);
 
                 &:after {
                     transform: scaleX(1);
@@ -122,8 +112,23 @@
         }
     }
 
+    &__bottom {
+        animation: fade 1s ease-in; 
+
+        @keyframes fade {
+            0% {opacity: 0; transform: translateY(-20%);};
+            100% {opacity: 1; transform: translateY(0);};
+        }
+    }
+
     &__results {
         @extend %flex-row-center;
+        // animation: fade 1s ease-in-out; 
+
+        // @keyframes fade {
+        //     0% {opacity: 0; transform: translateY(-100%);};
+        //     100% {opacity: 1; transform: translateY(0);};
+        // }
 
         &--correct, &--incorrect {
             @extend %flex-col-center;
@@ -184,4 +189,5 @@
 
     }
 }
+
 
