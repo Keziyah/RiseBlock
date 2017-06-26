@@ -1,5 +1,5 @@
 'use strict'
-require("!style-loader!css-loader!sass-loader!./components/sass/stylesheets/main.scss");
+require("!style-loader!css-loader!sass-loader!postcss-loader!./components/sass/stylesheets/main.scss");
 
 import React from 'react'
 import { render } from 'react-dom'

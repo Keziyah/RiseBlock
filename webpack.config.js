@@ -1,6 +1,8 @@
 'use strict';
 
 var webpack = require('webpack');
+var autoprefixer = require('autoprefixer');
+
 
 module.exports = {
   entry: './app/main.jsx',
@@ -22,11 +24,21 @@ module.exports = {
       }, 
       {
         test: /\.scss$/,
-        loaders: ["style-loader", "css-loader", "sass-loader"]
+        loaders: ["style-loader", "css-loader", "sass-loader", 'postcss-loader']
       }
     ]
   }, 
   resolve: {
     extensions: ['.js', '.jsx'],
-  }
+  }, 
+  
+  plugins: [
+  new webpack.LoaderOptionsPlugin({
+    options: {
+      postcss: [
+        autoprefixer(),
+      ]
+    }
+  })
+],
 }; 
