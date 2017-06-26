@@ -1,8 +1,8 @@
 @import 'abstracts/variables';
 
 .quiz {  
-    border: 1px solid #ddd; 
-    box-shadow: 1px 1px 1px 2px #ddd; 
+    border: 1px solid $main-light-gray; 
+    box-shadow: 1px 1px 1px 2px $main-light-gray; 
     margin-top: 5%; 
     margin-bottom: 2%; 
     @extend %flex-row-center;
@@ -17,7 +17,7 @@
     }
 
     &__answers {
-        border-top: 1px solid #EAEAEB;
+        border-top: 1px solid $answers-top-border;
         padding: 1em; 
 
         &-single {
@@ -29,7 +29,7 @@
             &:after {
                 display:block;
                 content: '';
-                border: solid 1px rgba(116, 112, 126, 1);  
+                border: solid 1px $main-gray;  
                 transform: scaleX(0);  
                 transition: transform 250ms ease-in-out;
             }
@@ -37,7 +37,7 @@
             &:before {
                 display:block;
                 content: '';
-                border: solid 1px rgba(116, 112, 126, 1);  
+                border: solid 1px $main-gray;  
                 transform: scaleX(0);  
                 transition: transform 250ms ease-in-out;
             }
@@ -46,17 +46,17 @@
 
                 &:after {
                     transform: scaleX(1);
-                    transform-origin:  0% 50%;
+                    transform-origin: 0% 50%;
                 }
 
                 &:before {
                     transform: scaleX(1);
-                    transform-origin:  0% 50%;
+                    transform-origin: 0% 50%;
                 }
             }  
 
             &:hover {
-                background-color: #f7f7f8;
+                background-color: $off-white;
             }
 
             p {
@@ -71,7 +71,7 @@
             .material-icons {
                 height: 40px; 
                 width: 40px; 
-                color: #ddd;
+                color: $main-light-gray;
                 position: relative; 
                 top: 7px;  
             }
@@ -92,13 +92,13 @@
             padding: 10px; 
             text-transform: uppercase; 
             cursor: pointer; 
-            background: #747A7E; 
+            background: $main-gray; 
 
             &:disabled {
-                background: #dddddd; 
+                background: $main-light-gray; 
 
                 &:hover {
-                    background: #ddd; 
+                    background: $main-light-gray; 
                 }
             }
 
@@ -107,7 +107,7 @@
             }
 
             &:hover {
-                background: #333; 
+                background: $off-black; 
             }
         }
     }
@@ -123,16 +123,10 @@
 
     &__results {
         @extend %flex-row-center;
-        // animation: fade 1s ease-in-out; 
-
-        // @keyframes fade {
-        //     0% {opacity: 0; transform: translateY(-100%);};
-        //     100% {opacity: 1; transform: translateY(0);};
-        // }
 
         &--correct, &--incorrect {
             @extend %flex-col-center;
-            background: #f7f7f8;
+            background: $off-white;
             width: 100%;
             padding: 1em; 
 
@@ -147,7 +141,7 @@
                 }
 
                 i {
-                    border: 2px solid #747A7E; 
+                    border: 2px solid $main-gray; 
                     border-radius: 50%;
                     padding: 0.6em;  
                 }
@@ -179,10 +173,10 @@
                 font-weight: 300; 
                 font-size: 0.5em; 
                 text-transform: uppercase; 
-                color: #ddd; 
+                color: $main-light-gray; 
 
                 &:hover {
-                    color: #747A7E
+                    color: $main-gray; 
                 }
             }
         }
