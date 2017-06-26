@@ -26,13 +26,13 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loader: 'style-loader!css-loader?sourceMap!postcss-loader!sass-loader?sourceMap'
+        loader: 'style-loader!css-loader?sourceMap!postcss-loader?sourceMap!sass-loader?sourceMap', 
       }
     ]
   },
   plugins: [
        new webpack.LoaderOptionsPlugin({
-         // test: /\.xxx$/, // may apply this only for some modules
+         test: /\.scss$/,
          options: {
            postcss: [autoprefixer(), precss()]
          }
