@@ -1,10 +1,12 @@
 @import 'abstracts/variables';
 
+
 .quiz {  
     border: 1px solid $main-light-gray; 
     box-shadow: 1px 1px 1px 2px $main-light-gray; 
     margin-top: 5%; 
     margin-bottom: 2%; 
+    min-height: 70vh; 
     @extend %flex-row-center;
 
 }
@@ -14,6 +16,17 @@
 
     &__question {
         padding-bottom: 2em; 
+
+        img {
+            max-width: 830px; 
+            width: 100%; 
+        }
+
+        p {
+            @media screen and (max-width: $smallest) {
+                font-size: 0.8em; 
+            }
+        }
     }
 
     /*Answer options*/
@@ -21,11 +34,19 @@
         border-top: 1px solid $answers-top-border;
         padding: 1em; 
 
+        @media screen and (max-width: $smallest) {
+            padding: 0.5em; 
+        }
+
         &-single {
             padding: 0.5em; 
             font-family: $secondary-font; 
             font-size: 0.8em; 
             cursor: pointer; 
+
+            @media screen and (max-width: $smallest) {
+                padding-left: 0; 
+            }
 
             /*Bottom border animation*/
             &:after {
@@ -63,7 +84,11 @@
 
             p {
                 display: inline-block; 
-                padding-left: 2em; 
+                padding-left: 2em;
+
+                @media screen and (max-width: $smallest) {
+                    padding-left: 1em; 
+                } 
             }
             /*Hide the radio buttons to use MDL icons instead*/
             input[type=radio] {
@@ -116,6 +141,11 @@
 
     /*Quiz results*/
     &__bottom {
+        @media screen and (max-width: $smallest) {
+                position: relative; 
+                bottom: 2em;  
+        }
+
         animation: fade 1s ease-in; 
         /*Results slide in*/
         @keyframes fade {
@@ -152,6 +182,9 @@
 
             p {
                 font-size: 0.9em; 
+                @media screen and (max-width: $smallest) {
+                    font-size: 0.7em; 
+                }
             }
         }
 
@@ -178,6 +211,11 @@
                 font-size: 0.5em; 
                 text-transform: uppercase; 
                 color: $main-light-gray; 
+
+                @media screen and (max-width: $smallest) {
+                    font-size: 0.8em; 
+                    color: $main-gray; 
+                }
 
                 &:hover {
                     color: $main-gray; 

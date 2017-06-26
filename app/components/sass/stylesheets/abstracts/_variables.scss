@@ -2,6 +2,10 @@
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
 
+//BREAKPOINTS
+$smallest: (400px);
+
+
 %flex-row-center {
     display: flex; 
     flex-direction: row; 
@@ -14,8 +18,6 @@
     align-items: center;
 }
 
-
-
 /// Regular font family
 /// @type List
 $primary-font: 'Merriweather', serif !default;
@@ -24,10 +26,6 @@ $secondary-font: 'Lato', sans-serif;
 /// Code (monospace) font family
 /// @type List
 // $code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
-
-
-
-
 
 /// Copy text color
 
